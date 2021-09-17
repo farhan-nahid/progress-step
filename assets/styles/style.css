@@ -1,0 +1,27 @@
+/* import google fonts */
+
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+/* reset default css */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white-color: #ffffff;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: var(--white-color);
+}
