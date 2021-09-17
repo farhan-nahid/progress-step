@@ -13,15 +13,102 @@
 }
 
 :root {
-  --white-color: #ffffff;
+  --white-color: #f6f7fb;
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
 }
 
 body {
+  background-color: var(--white-color);
   font-family: "Muli", sans-serif;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress__container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.progress__container::after {
+  content: "";
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: var(--line-border-empty);
+  transition: 0.4s ease-in;
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.progress {
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background-color: var(--line-border-fill);
+  transition: 0.4s ease-in;
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.circle {
+  background-color: var(--white-color);
+  color: var(--line-border-fill);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  transition: 0.3s ease-in;
+  border: 3px solid var(--line-border-empty);
+}
+
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+.btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  margin: 5px;
   color: var(--white-color);
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 30px;
+  background-color: var(--line-border-fill);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--line-border-empty);
+  color: var(--line-border-fill);
 }
